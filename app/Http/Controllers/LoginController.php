@@ -36,6 +36,8 @@ class LoginController extends Controller
     public function simpanreg(Request $request){
         $user = new User();
         $user->email=$request->post('email');
+        $user->nama=$request->post('nama');
+        $user->nohp=$request->post('nohp');
         $user->password=bcrypt($request->post('password'));
         if($user->save()){
             return response()->json([

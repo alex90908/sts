@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\histori;
 use App\Models\sepatu;
+use App\Models\User;
 
 class tampilkan extends Controller
 {
@@ -42,6 +43,14 @@ class tampilkan extends Controller
         //$list['article_content']=html_entity_decode($list['article_content']);
         return response()->json($list);
     }
+
+    public function getuser(){
+        $list = new User();
+        $list = $list->getuser();
+        //$list['article_content']=html_entity_decode($list['article_content']);
+        return response()->json($list);
+    }
+
 
 
 }

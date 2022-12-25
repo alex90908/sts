@@ -18,9 +18,11 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array<int, string>
      */
-    protected $table = "users";
+    protected $table = "users3";
     protected $fillable = [
         'email',
+        'nama',
+        'nohp',
         'password',
     ];
 
@@ -63,5 +65,8 @@ class User extends Authenticatable implements JWTSubject
             return true;
         }
         return false;
+    }
+    public function getuser(){
+        return $this->orderBy('id', 'DESC')->get();
     }
 }

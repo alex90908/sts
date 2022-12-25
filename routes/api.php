@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\tampilkan;
 use App\Http\Controllers\TesController;
+use App\Http\Controllers\UpdateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,9 @@ Route::post("/form", [TesController::class, 'formk']);
 Route::get("/history", [tampilkan::class, 'welcomeInfo']);
 Route::get("/history1", [tampilkan::class, 'tampilkan']);
 Route::get("/history2", [tampilkan::class, 'getsepatu']);
+Route::get("/history3", [tampilkan::class, 'getuser']);
+Route::post("/update", [UpdateController::class, 'update']);
+
 
 
 
